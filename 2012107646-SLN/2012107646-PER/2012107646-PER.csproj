@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9BABA94D-CFFF-44D9-8845-334DB07B1E8C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>_2012107646_PER</RootNamespace>
+    <AssemblyName>2012107646-PER</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="2012107646DbContext.cs" />
+    <Compile Include="EnityTypeConfigurations\AdministradorEquipoConfiguration.cs" />
+    <Compile Include="EnityTypeConfigurations\AdministradorLineaConfiguration.cs" />
+    <Compile Include="EnityTypeConfigurations\CentroAtencionConfiguration.cs" />
+    <Compile Include="EnityTypeConfigurations\ClienteConfiguration.cs" />
+    <Compile Include="EnityTypeConfigurations\ContratoConfiguration.cs" />
+    <Compile Include="EnityTypeConfigurations\DepartamentoConfiguration.cs" />
+    <Compile Include="EnityTypeConfigurations\DireccionConfiguration.cs" />
+    <Compile Include="EnityTypeConfigurations\DistritoConfiguration.cs" />
+    <Compile Include="EnityTypeConfigurations\EquipoCelularConfiguration.cs" />
+    <Compile Include="EnityTypeConfigurations\EstadoEvaluacionConfiguration.cs" />
+    <Compile Include="EnityTypeConfigurations\EvaluacionConfiguration.cs" />
+    <Compile Include="EnityTypeConfigurations\LineaTelefonicaConfiguration.cs" />
+    <Compile Include="EnityTypeConfigurations\PlanConfiguration.cs" />
+    <Compile Include="EnityTypeConfigurations\ProvinciaConfiguration.cs" />
+    <Compile Include="EnityTypeConfigurations\TipoEvaluacionConfiguration.cs" />
+    <Compile Include="EnityTypeConfigurations\TipoLineaConfiguration.cs" />
+    <Compile Include="EnityTypeConfigurations\TipoPagoConfiguration.cs" />
+    <Compile Include="EnityTypeConfigurations\TipoPlanConfiguration.cs" />
+    <Compile Include="EnityTypeConfigurations\TipoTrabajadorConfiguration.cs" />
+    <Compile Include="EnityTypeConfigurations\TrabajadorConfiguration.cs" />
+    <Compile Include="EnityTypeConfigurations\UbigeoConfiguration.cs" />
+    <Compile Include="EnityTypeConfigurations\VentaConfiguration.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\2012107646-ENT\2012107646-ENT.csproj">
+      <Project>{7a31ef67-6f49-469e-8a59-645d5fef5f48}</Project>
+      <Name>2012107646-ENT</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
