@@ -12,9 +12,12 @@ namespace _2012107646_PER.EnityTypeConfigurations
     {
          public DireccionConfiguration()
         {
-            Property(v => v.Name)
-               .IsRequired()
-               .HasMaxLength(255);
+            ToTable("Direccion");
+            HasKey(a => a.DireccionID);
+
+            HasRequired(d => d.Distrito)
+              .WithMany(d => d.Direccion)
+              .HasForeignKey(d => d.DistritoID);
         }
     }
 }

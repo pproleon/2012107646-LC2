@@ -12,9 +12,9 @@ namespace _2012107646_PER.EnityTypeConfigurations
     {
          public AdministradorLineaConfiguration()
         {
-            Property(v => v.Name)
-               .IsRequired()
-               .HasMaxLength(255);
+
+            ToTable("AdministradorLinea");
+            HasKey(a => a.AdministradorLineaID);
         }
     }
 }

@@ -12,9 +12,9 @@ namespace _2012107646_PER.EnityTypeConfigurations
     {
          public EstadoEvaluacionConfiguration()
         {
-            Property(v => v.Name)
-               .IsRequired()
-               .HasMaxLength(255);
+            ToTable("EstadoEvaluacion");
+            HasKey(a => a.EstadoEvaluacionID);
+
         }
     }
 }

@@ -12,9 +12,13 @@ namespace _2012107646_PER.EnityTypeConfigurations
     { 
         public EquipoCelularConfiguration()
         {
-            Property(v => v.Marca)
-               .IsRequired()
-               .HasMaxLength(255);
+            ToTable("EquipoCelular");
+            HasKey(a => a.EquipoCelularID);
+
+            HasRequired(a => a.AdministradorEquipo)
+                .WithMany(e => e.EquipoCelular)
+                .HasForeignKey(a => a.AdministradorEquipoID);
+
         }
     }
 }

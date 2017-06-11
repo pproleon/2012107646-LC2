@@ -12,9 +12,13 @@ namespace _2012107646_PER.EnityTypeConfigurations
     {
          public ProvinciaConfiguration()
         {
-            Property(v => v.Name)
-               .IsRequired()
-               .HasMaxLength(255);
+            ToTable("Provincia");
+            HasKey(a => a.ProvinciaID);
+
+            HasRequired(a => a.Departamento)
+                .WithMany(a => a.Provincia)
+                .HasForeignKey(a => a.DepartamentoID);
+
         }
     }
 }

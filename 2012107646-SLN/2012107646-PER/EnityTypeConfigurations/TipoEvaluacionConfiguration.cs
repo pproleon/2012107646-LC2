@@ -12,9 +12,9 @@ namespace _2012107646_PER.EnityTypeConfigurations
     {
          public TipoEvaluacionConfiguration()
         {
-            Property(v => v.Name)
-               .IsRequired()
-               .HasMaxLength(255);
+            ToTable("TipoEvaluacion");
+            HasKey(a => a.TipoEvaluacionID);
+
         }
     }
 }

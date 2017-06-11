@@ -12,9 +12,16 @@ namespace _2012107646_PER.EnityTypeConfigurations
     {
          public LineaTelefonicaConfiguration()
         {
-            Property(v => v.Name)
-               .IsRequired()
-               .HasMaxLength(255);
+            ToTable("LineaTelefonica");
+            HasKey(a => a.LineaTelefonicaID);
+
+            HasRequired(a => a.AdministradorLinea)
+                .WithMany(a => a.LineaTelefonica)
+                .HasForeignKey(a => a.AdministradorLineaID);
+
+            HasRequired(a => a.TipoLinea)
+                .WithMany(a => a.LineaTelefonica);
+
         }
     }
 }

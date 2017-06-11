@@ -12,9 +12,8 @@ namespace _2012107646_PER.EnityTypeConfigurations
     {
          public DepartamentoConfiguration()
         {
-            Property(v => v.Name)
-               .IsRequired()
-               .HasMaxLength(255);
+            ToTable("Departamento");
+            HasKey(a => a.DepartamentoID);
         }
     }
 }

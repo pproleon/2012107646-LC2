@@ -12,9 +12,12 @@ namespace _2012107646_PER.EnityTypeConfigurations
     {
          public PlanConfiguration()
         {
-            Property(v => v.Name)
-               .IsRequired()
-               .HasMaxLength(255);
+            ToTable("Plan");
+            HasKey(a => a.PlanID);
+
+            HasRequired(a => a.TipoPlan)
+                .WithMany(a => a.Plan);
+
         }
     }
 }

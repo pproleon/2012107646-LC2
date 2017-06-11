@@ -12,9 +12,12 @@ namespace _2012107646_PER.EnityTypeConfigurations
     { 
         public CentroAtencionConfiguration()
         {
-            Property(v => v.Name)
-               .IsRequired()
-               .HasMaxLength(255);
+            ToTable("CentroAtencion");
+            HasKey(a => a.CentroAtencionID);
+
+            HasRequired(a => a.Direccion)
+                .WithRequiredPrincipal(a => a.CentroAtencion);
+
         }
     }
 }

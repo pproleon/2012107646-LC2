@@ -12,9 +12,8 @@ namespace _2012107646_PER.EnityTypeConfigurations
     {
          public ContratoConfiguration()
         {
-            Property(v => v.NroContrato)
-               .IsRequired()
-               .HasMaxLength(255);
+            ToTable("Contrato");
+            HasKey(a => a.ContratoID);
         }
     }
 }

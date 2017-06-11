@@ -12,9 +12,12 @@ namespace _2012107646_PER.EnityTypeConfigurations
     {
            public TrabajadorConfiguration()
         {
-            Property(v => v.Name)
-               .IsRequired()
-               .HasMaxLength(255);
+            ToTable("Trabajor");
+            HasKey(a => a.TrabajadorID);
+
+            HasRequired(a => a.TipoTrabajador)
+                .WithMany(a => a.Trabajador);
+
         }
     }
 }

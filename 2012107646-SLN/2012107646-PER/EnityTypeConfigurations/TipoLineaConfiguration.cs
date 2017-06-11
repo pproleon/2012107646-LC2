@@ -12,9 +12,8 @@ namespace _2012107646_PER.EnityTypeConfigurations
     {
          public TipoLineaConfiguration()
         {
-            Property(v => v.Name)
-               .IsRequired()
-               .HasMaxLength(255);
+            ToTable("TipoLinea");
+            HasKey(a => a.TipoLineaID);
         }
     }
 }

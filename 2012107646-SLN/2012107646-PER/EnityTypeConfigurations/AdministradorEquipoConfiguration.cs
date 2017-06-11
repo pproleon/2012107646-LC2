@@ -12,9 +12,8 @@ namespace _2012107646_PER.EnityTypeConfigurations
     {
         public AdministradorEquipoConfiguration()
         {
-            Property(v => v.Name)
-               .IsRequired()
-               .HasMaxLength(255);
+            ToTable("AdministradorEquipo");
+            HasKey(a => a.AdministradorEquipoID);
         }
     }
 }

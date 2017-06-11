@@ -12,9 +12,12 @@ namespace _2012107646_PER.EnityTypeConfigurations
     {
          public DistritoConfiguration()
         {
-            Property(v => v.Name)
-               .IsRequired()
-               .HasMaxLength(255);
+            ToTable("Distrito");
+            HasKey(a => a.DistritoID);
+
+            HasRequired(a => a.Provincia)
+                .WithMany(a => a.Distritos)
+                .HasForeignKey(a => a.ProvinciaID);
         }
     }
 }

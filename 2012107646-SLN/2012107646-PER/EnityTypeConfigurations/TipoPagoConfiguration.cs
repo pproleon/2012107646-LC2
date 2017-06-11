@@ -12,9 +12,10 @@ namespace _2012107646_PER.EnityTypeConfigurations
     {
          public TipoPagoConfiguration()
         {
-            Property(v => v.Name)
-               .IsRequired()
-               .HasMaxLength(255);
+
+            ToTable("TipoPago");
+            HasKey(a => a.TipoPagoID);
+
         }
     }
 }

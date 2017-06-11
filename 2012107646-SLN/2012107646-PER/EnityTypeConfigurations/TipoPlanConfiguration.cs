@@ -12,9 +12,8 @@ namespace _2012107646_PER.EnityTypeConfigurations
     {
          public TipoPlanConfiguration()
         {
-            Property(v => v.Name)
-               .IsRequired()
-               .HasMaxLength(255);
+            ToTable("TipoPlan");
+            HasKey(a => a.TipoPlanID);
         }
     }
 }

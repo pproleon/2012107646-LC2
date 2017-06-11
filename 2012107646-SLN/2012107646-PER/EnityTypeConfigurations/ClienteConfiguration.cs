@@ -12,9 +12,8 @@ namespace _2012107646_PER.EnityTypeConfigurations
     {
          public ClienteConfiguration()
         {
-            Property(v => v.Nombres)
-               .IsRequired()
-               .HasMaxLength(255);
+            ToTable("Cliente");
+            HasKey(a => a.ClienteID);
         }
     }
 }
